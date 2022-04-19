@@ -1,3 +1,6 @@
+// import "https://html2canvas.hertzen.com/dist/html2canvas.min.js";
+// import "https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js";
+let result;
 const buildQuiz = () => {
   // variable to store the HTML output
   const output = [];
@@ -44,7 +47,15 @@ const showNextPage = () => {
   showPage(currentPage + 1);
 }
 
-const startAction = ()=>{
+const showPoster = ()=>{
+  showNextPage();
+  const username = document.getElementById("username");
+  console.log(username)
+  console.log(document.getElementsByClassName("username"))
+
+}
+
+const startAction = () => {
   // console.log('a')
   showNextPage()
   showSlide(0)
@@ -73,19 +84,19 @@ const showSlide = (n) => {
 const showNextSlide = () => {
   console.log("show next");
   // console.log("question"+currentSlide)
-  const currQ = document.getElementsByName("question"+currentSlide)
+  const currQ = document.getElementsByName("question" + currentSlide)
   // querySelector('input[name="question${currentSlide}"]:checked').value
   // .getElementById('question'+(currentSlide))
   console.log(currQ)
-  let selected  = false;
+  let selected = false;
   currQ.forEach(element => {
-    if(element.checked){
+    if (element.checked) {
       selected = true
     }
   });
-  if(selected){
+  if (selected) {
     showSlide(currentSlide + 1);
-  }else{
+  } else {
     window.alert('你还没有选择答案哟')
   }
 }
@@ -151,27 +162,21 @@ const showResults = () => {
 
 
   let finalAnswer = calcuateResult(answers)
-  
   const result = [];
-  console.log(username)
+
   result.push(
-
-
     ` 
-    <div>${username.value}</div>
-     <div style="margin-top:30%"> ${finalAnswer} </div>
-     <div class = "result-block">
-     <div class = "description"></div>
-     <div class = "result-img" style = ""></div>
-    </div>
+     <div class = 'finalAnser' style="width: 100%; height:100%"> ${finalAnswer}
+     <image src ='img/poster/${finalAnswer}.jpg' style="width: 100%; height:100%">
+      </div>
 `
   );
 
-  document.getElementById('results').innerHTML = result.join('');
+  resultsContainer.innerHTML = result.join('');
 
 }
 
-const backToHome = ()=>{
+const backToHome = () => {
   // currentPage = 0;
   showPage(0)
   // buildQuiz()
@@ -184,21 +189,25 @@ const backToHome = ()=>{
   // console.log(currentPage)
 }
 
-const savePoster = ()=>{
-  console.log('save poster')
-  const resultPoster = document.getElementById('resultPoster');
-  saveAsPng(node, { filename: 'Report', printDate: true });
+// const savePoster = () => {
+//   screenshot();
+//   showNextPage();
+// }
 
-}
 
-const showPoster = ()=>{
-showNextPage();
-results.push(
-  `<div>
-  <div></>
-    </div>`
-);
-}
+// function screenshot() {
+//   html2canvas(document.body).then(canvas => {
+//     const image = document.createElement('img');
+//     image.src = canvas.toDataURL("image/png");
+//     document.body.appendChild(image);
+
+//     // const screenshotImg = []
+//     // console.log(image)
+//     // // screenshotImg.push(`<image src = >`)
+//     // document.getElementById('toSaveResultPoster').innerHTML = image.join('');
+//     // document.body.appendChild(image);
+//   });
+// }
 
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
@@ -219,7 +228,7 @@ const backToHomeButton = document.getElementById("backToHomeButton");
 const showPosterButton = document.getElementById("showPosterButton");
 const saveButton = document.getElementById("saveButton");
 const saveButtons = document.getElementById("saveButtons")
-const username = document.getElementById("username")
+// const screenShotBtn = document.getElementById()
 let currentPage = 0;
 
 showPage(currentPage);
@@ -231,6 +240,6 @@ submitButton.addEventListener('click', showResults);
 previousButton.addEventListener("click", showPreviousSlide);
 nextButton.addEventListener("click", showNextSlide);
 startButton.addEventListener("click", startAction);
-showPosterButton.addEventListener("click",showNextPage);
+showPosterButton.addEventListener("click", showPoster);
 backToHomeButton.addEventListener("click", backToHome)
-saveButton.addEventListener("click", savePoster)
+// saveButton.addEventListener("click", savePoster)

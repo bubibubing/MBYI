@@ -45,6 +45,7 @@ h1{
   text-align: left;
   display: inline-block;
   font-size: 2rem;
+  width: 100%;
 }
 
 .answers label{
@@ -62,7 +63,7 @@ button{
 	cursor: pointer;
 
   &#start-btn{
-    background-image: url(images/start-button.png);
+    // background-image: url(images/start-button.png);
     width: 50%;
     height: 50%;
   }
@@ -90,7 +91,7 @@ button:hover{
 
 .page{
   position: absolute;
-  background-image: url('images/background.jpg');
+  // background-image: url('./img/bg/background.JPG');
   background-repeat: no-repeat;
   background-size: cover;
   left: 0px;

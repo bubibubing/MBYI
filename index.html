@@ -51,7 +51,9 @@
       <div>
         “我们仍未知道那天拯救了，梦想岛的勇士的姓名”
       </div>
-      <input id='username' type = "text">
+      <label for="fname">First name:</label>
+      <input type="text" id="username" name="username" class="username" autofocus>
+      <!-- <input id='username' type = "text"> -->
       <div class="buttons">
         <button id="showPosterButton">确认</button>
       </div>
@@ -60,17 +62,40 @@
   <!-- PAGE 4 poster-->
   <div class="page" id = "resultPoster">
     <div class="page-content">
-      <div id="results">
+      <div id="results" style = 'width: 100%; height: 100%;'>
       </div>
       <div class="buttons" id="saveButtons">
         <button id="backToHomeButton">时空循环</button>
-        <button id="saveButton">保存</button>
+        <button id="saveButton" onclick="screenshot()">保存</button>
       </div>
+    </div>
+  </div>
+  <div class="page" id = "toSaveResultPoster">
+    <div class="page-content">
+      <div id="result-image">
+        <!-- <image src = "img/poster/A.jpg"></image> -->
+      </div>
+      <!-- <div class="buttons" id="saveButtons">
+        <button id="backToHomeButton">时空循环</button>
+        <button id="saveButton" onclick="screenshot()">保存</button>
+      </div> -->
     </div>
   </div>
   <script src="./data.js"></script>
   <script src="./main.js"></script>
-
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+  <script>
+    function screenshot() {
+      html2canvas(document.body).then(canvas => {
+        // const image = document.createElement('img');
+        const image = new Image()
+        image.crossorigin="anonymous";
+        image.src = canvas.toDataURL("image/png");
+        document.body.appendChild(image);
+      });
+    }
+  </script>
 </body>
 
 </html>
