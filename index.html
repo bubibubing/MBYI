@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- <h1>MBYI-211 测试</h1> -->
+    <!-- PAGE1 welcome -->
+    <div class="page">
+      <div class="page-content intro">
+        <div class="intro-text">
+          <div style="margin-bottom:10%">
+            MBYI-211型人格测试，是生番茄国知名心理学家啵·泽维尔·圆在人格心理学领域深耕七年的成果，学界称其为划时代的人格测试。
+          </div>
+          <div>
+            它结合了最先进的数x宝贝学、唱跳学、烹饪学、话痨学等多个维度，全方面的分析你的精神状况，帮助你更了解你自己的模样
+          </div>
+        </div>
+        <div class="buttons">
+          <div class="animated lightSpeedIn">text</div>
+          <button class="" id='start-btn'>start</button>
+        </div>
+      </div>
+    </div>
+    <!-- PAGE2  quiz -->
+    <div class="page">
+      <div class="page-content">
+        <div class="quiz-container">
+          <div id="quiz"></div>
+        </div>
+        <div class="buttons">
+          <button id="previous">上一个问题</button>
+          <button id="next">下一个问题</button>
+          <button id="submit">提交答案</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- PAGE 3 username -->
+  <div class="page">
+    <div class="page-content">
+      <div>
+        勇士，
+        感谢你拯救了梦想岛
+        在你离开前，绿油油的小精灵还有一个问题
+      </div>
+      <div>
+        “我们仍未知道那天拯救了，梦想岛的勇士的姓名”
+      </div>
+      <input id='username' type = "text">
+      <div class="buttons">
+        <button id="showPosterButton">确认</button>
+      </div>
+    </div>
+  </div>
+  <!-- PAGE 4 poster-->
+  <div class="page" id = "resultPoster">
+    <div class="page-content">
+      <div id="results">
+      </div>
+      <div class="buttons" id="saveButtons">
+        <button id="backToHomeButton">时空循环</button>
+        <button id="saveButton">保存</button>
+      </div>
+    </div>
+  </div>
+  <script src="./data.js"></script>
+  <script src="./main.js"></script>
+
+</body>
+
+</html>
