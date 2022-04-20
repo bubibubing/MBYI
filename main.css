@@ -115,6 +115,11 @@ button:hover {
 .page .buttons#confirm-btn {
   justify-content: end;
 }
+.page .buttons#confirm-btn #showPosterButton {
+  width: 30vw;
+  height: 30vw;
+  margin: auto;
+}
 .page .buttons#saveButtons {
   position: absolute;
   width: 80vw;
@@ -146,11 +151,11 @@ button:hover {
 
 input#username {
   border: 2px green solid;
-  border-radius: 50%;
-  height: 8%;
+  border-radius: 3vw;
+  height: 14vw;
   font-size: 5vw;
-  margin: 85vw auto 0vw auto;
-  width: 50vw;
+  margin: auto auto 2vw auto;
+  width: 55vw;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -153,6 +153,11 @@ button:hover {
 
     &#confirm-btn{
       justify-content: end;
+      #showPosterButton{
+        width: 30vw;
+        height: 30vw;
+        margin: auto;
+      }
     }
 
     &#saveButtons{
@@ -210,9 +215,9 @@ button:hover {
 
 input#username {
   border: 2px green solid;
-  border-radius: 50%;
-  height: 8%;
+  border-radius: 3vw;
+  height: 14vw;
   font-size: 5vw;
-  margin: 85vw auto 0vw auto;
-  width: 50vw;
+  margin: auto auto 2vw auto;
+  width: 55vw;
 }
