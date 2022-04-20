@@ -67,19 +67,33 @@
       </div> -->
     </div>
   </div>
+  <!-- Result Image Modal -->
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
   <script src="./data.js"></script>
   <script src="./main.js"></script>
-  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.9.0/html-to-image.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script>
+    let modal = document.getElementById("myModal");
+    let modalImg = document.getElementById("img01");
+    let captionText = document.getElementById("caption");
+
     function screenshot() {
-      html2canvas(document.body).then(canvas => {
-        // const image = document.createElement('img');
-        const image = new Image()
-        image.crossorigin = "anonymous";
-        image.src = canvas.toDataURL("image/png");
-        document.body.appendChild(image);
+      htmlToImage.toPng(document.getElementById("results"))
+        .then(function (dataUrl) {
+          modal.style.display = "block";
+          modalImg.src = dataUrl;
       });
+    }
+    // Get the <span> element that closes the modal
+    const span = document.getElementsByClassName("close")[0];
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
     }
   </script>
 </body>
