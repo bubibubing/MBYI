@@ -62,14 +62,15 @@ const startAction = () => {
 
 const showSlide = (n) => {
   slides[currentSlide].classList.remove('active-slide');
-  document.getElementById('quiz-page').style.backgroundImage = "url('img/quiz1.jpg')"
+  let url = 'url("img/question/'+n+'.jpg")'
+  document.getElementById('quiz-page').style.backgroundImage =  url
   slides[n].classList.add('active-slide');
   document.getElementById('quiz-btns').style.justifyContent = "space-between"
   currentSlide = n;
   if (currentSlide === 0) {
 
     previousButton.style.display = 'none';
-    document.getElementById('quiz-btns').style.justifyContent = "end"
+    document.getElementById('quiz-btns').style.justifyContent = "center"
 
   } else {
     previousButton.style.display = 'inline-block';

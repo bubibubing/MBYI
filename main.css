@@ -31,12 +31,14 @@ body button {
   display: inline-block;
   font-size: 2vw;
   width: 100%;
-  margin-top: 40vw;
+  margin-top: 25vw;
 }
 
 .answers label {
   display: flex;
   border: blue solid 1px;
+  height: 10vw;
+  margin-bottom: 4.5vw;
 }
 
 button {
@@ -60,9 +62,9 @@ button:hover {
 
 .slide {
   position: absolute;
-  left: 10vw;
+  left: 20vw;
   top: 45vw;
-  width: 70vw;
+  width: 60vw;
   z-index: 1;
   opacity: 0;
   transition: opacity 0.5s;
@@ -120,12 +122,17 @@ button:hover {
   height: 30vw;
   margin: auto;
 }
+.page .buttons#quiz-btns {
+  height: 10vw;
+  padding: 0vw 10vw;
+  margin-bottom: 27vw;
+}
 .page .buttons#saveButtons {
   position: absolute;
   width: 80vw;
   top: 150vw;
 }
-.page .buttons#saveButtons button {
+.page .buttons button {
   height: 10vw;
   width: 33vw;
 }
@@ -137,7 +144,7 @@ button:hover {
 
 .quiz-container {
   position: relative;
-  height: 100%;
+  height: 70%;
 }
 .quiz-container #quiz {
   height: 100%;
