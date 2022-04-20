@@ -1,6 +1,7 @@
+@charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
 body {
-  font-size: 3.5rem;
+  font-size: 3.5vw;
   font-family: "Work Sans", sans-serif;
   color: #333;
   font-weight: 300;
@@ -9,25 +10,14 @@ body {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 body button {
-  font-size: 2.5rem;
+  font-size: 2.5vw;
   background-color: yellowgreen;
-  border-radius: 20px;
-  border: green 2px solid;
+  border: green 2vw solid;
 }
 
 .container {
-  height: 100%;
   width: 100%;
   display: relative;
-}
-
-h1 {
-  font-weight: 300;
-  margin: 0px;
-  padding: 10px;
-  font-size: 20px;
-  background-color: #444;
-  color: #fff;
 }
 
 .question {
@@ -37,31 +27,31 @@ h1 {
 }
 
 .answers {
-  margin-bottom: 20px;
   text-align: left;
   display: inline-block;
-  font-size: 2rem;
+  font-size: 2vw;
   width: 100%;
+  margin-top: 40vw;
 }
 
 .answers label {
   display: flex;
-  margin: 10% 0%;
+  border: blue solid 1px;
 }
 
 button {
   font-family: "Work Sans", sans-serif;
-  font-size: 22px;
-  background-color: #279;
-  color: #fff;
+  font-size: 2vw;
   border: 0px;
-  border-radius: 3px;
-  padding: 20px;
   cursor: pointer;
 }
 button#start-btn {
-  width: 50%;
-  height: 50%;
+  background-color: transparentØ;
+  margin-top: 132vw;
+  margin-left: 50vw;
+  width: 30vw;
+  height: 30vw;
+  border-radius: 50%;
 }
 
 button:hover {
@@ -70,13 +60,11 @@ button:hover {
 
 .slide {
   position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 80%;
-  height: 80%;
+  left: 10vw;
+  top: 45vw;
+  width: 70vw;
   z-index: 1;
   opacity: 0;
-  padding: 10%;
   transition: opacity 0.5s;
 }
 
@@ -87,31 +75,31 @@ button:hover {
 
 .page {
   position: absolute;
-  background-image: url(/img/bg/background.JPG);
   background-repeat: no-repeat;
   background-size: cover;
   left: 0px;
   top: 0px;
   width: 100%;
-  height: 100%;
+  height: 178vw;
   z-index: 1;
   opacity: 0;
   transition: opacity 1s;
   /* height: 0px; */
 }
+.page#home {
+  background-image: url("./img/home.jpg");
+}
+.page#username-page {
+  background-image: url("./img/username.jpg");
+}
 .page .page-content {
   position: flex;
-  height: 70%;
-  margin: 25% 15%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-.page .page-contentintro {
   text-align: left;
-}
-.page .page-contentintro div {
-  padding: 5%;
+  background-repeat: no-repeat;
 }
 .page .page-content .result-block {
   display: flex;
@@ -121,39 +109,48 @@ button:hover {
 }
 .page .buttons {
   display: flex;
+  padding: 10vw;
   justify-content: space-between;
-  height: 20%;
-  align-items: center;
-  width: 100%;
+}
+.page .buttons#confirm-btn {
+  justify-content: end;
+}
+.page .buttons#saveButtons {
+  position: absolute;
+  width: 80vw;
+  top: 150vw;
+}
+.page .buttons#saveButtons button {
+  height: 10vw;
+  width: 33vw;
 }
 
 .active-page {
   opacity: 1;
   z-index: 2;
-  height: 100%;
 }
 
 .quiz-container {
   position: relative;
   height: 100%;
-  margin: 40px 0px;
 }
 .quiz-container #quiz {
   height: 100%;
-  background-color: white;
-  opacity: 0.5;
+  background-color: transparent;
 }
 .quiz-container #quiz input[type=radio] {
-  height: 2rem;
-  width: 2rem;
-  margin-right: 1rem;
+  height: 2vw;
+  width: 2vw;
+  margin: 2vw 2vw;
 }
 
 input#username {
   border: 2px green solid;
-  border-radius: 30px;
+  border-radius: 50%;
   height: 8%;
-  font-size: 5rem;
+  font-size: 5vw;
+  margin: 85vw auto 0vw auto;
+  width: 50vw;
 }
 
 /*# sourceMappingURL=main.css.map */

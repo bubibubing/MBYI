@@ -25,8 +25,7 @@ const buildQuiz = () => {
     // add this question and its answers to the output
     output.push(
       `<div class="slide">
-          <div class="question"> ${currentQuestion.text} </div>
-          <div class="answers"> ${answers.join("")} </div>
+          <div class="answers" style = 'background-color:green; opacity: 0.5'> ${answers.join("")} </div>
         </div>`
     );
   }
@@ -47,7 +46,7 @@ const showNextPage = () => {
   showPage(currentPage + 1);
 }
 
-const showPoster = ()=>{
+const showPoster = () => {
   showNextPage();
   const username = document.getElementById("username");
   console.log(username)
@@ -63,12 +62,19 @@ const startAction = () => {
 
 const showSlide = (n) => {
   slides[currentSlide].classList.remove('active-slide');
+  document.getElementById('quiz-page').style.backgroundImage = "url('img/quiz1.jpg')"
   slides[n].classList.add('active-slide');
+  document.getElementById('quiz-btns').style.justifyContent = "space-between"
   currentSlide = n;
   if (currentSlide === 0) {
+
     previousButton.style.display = 'none';
+    document.getElementById('quiz-btns').style.justifyContent = "end"
+
   } else {
     previousButton.style.display = 'inline-block';
+    document.getElementById('quiz-btns').style.justifyContent = "space-between"
+
   }
   if (currentSlide === slides.length - 1) {
     nextButton.style.display = 'none';
@@ -87,7 +93,7 @@ const showNextSlide = () => {
   const currQ = document.getElementsByName("question" + currentSlide)
   // querySelector('input[name="question${currentSlide}"]:checked').value
   // .getElementById('question'+(currentSlide))
-  console.log(currQ)
+
   let selected = false;
   currQ.forEach(element => {
     if (element.checked) {
@@ -149,7 +155,7 @@ const showResults = () => {
   // gather answer containers from our quiz
   showNextPage();
   const answerContainers = quizContainer.querySelectorAll('.answers');
-
+  
   const answers = [];
   questions.forEach((_, questionNumber) => {
     // find selected answer
@@ -166,7 +172,7 @@ const showResults = () => {
 
   result.push(
     ` 
-     <div class = 'finalAnser' style="width: 100%; height:100%"> ${finalAnswer}
+     <div class = 'finalAnser' style="width: 100%; height:100%">
      <image src ='img/poster/${finalAnswer}.jpg' style="width: 100%; height:100%">
       </div>
 `
@@ -183,9 +189,9 @@ const backToHome = () => {
   showSlide(0)
 
   console.log(currentPage)
-  // if (currentPage !== 4) {
-  //   saveButtons.style.display = 'none';
-  // }
+  if (currentPage !== 4) {
+    saveButtons.style.display = 'none';
+  }
   // console.log(currentPage)
 }
 
