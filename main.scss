@@ -68,13 +68,13 @@ button {
   cursor: pointer;
 
   &#start-btn {
-    background-color: transparentØ;
+    background-color: transparent;
     // background-image: url(images/start-button.png);
     margin-top: 132vw;
     margin-left: 50vw;
     width: 30vw;
-    height: 30vw;
-    border-radius: 50%;
+    height: 35vw;
+    // border-radius: 50%;
   }
 }
 
@@ -144,6 +144,21 @@ button:hover {
       }
     }
 
+  #results{
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    #poster-username{
+      left: 12vw;
+      top: 95vw;
+      font-weight: bolder;
+      position: absolute;
+      color: white;
+      font-family: ZCOOL KuaiLe;
+      font-size: 7vw;
+    }
+  }
+
   }
 
   .buttons{
@@ -153,8 +168,9 @@ button:hover {
     padding:10vw;
     justify-content: space-between;
 
-    &#confirm-btn{
-      justify-content: end;
+    &.confirm-btns{
+      flex-grow: 1;
+      justify-content: center;
       #showPosterButton{
         width: 30vw;
         height: 30vw;
@@ -180,6 +196,7 @@ button:hover {
       width: 33vw;
     }
   }
+
   
   // .buttons {
 
@@ -228,6 +245,6 @@ input#username {
   border-radius: 3vw;
   height: 14vw;
   font-size: 5vw;
-  margin: auto auto 2vw auto;
+  margin: 110vw auto 2vw auto;
   width: 55vw;
 }
