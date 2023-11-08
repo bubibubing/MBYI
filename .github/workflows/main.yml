@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      PREV_COMMIT: "b947b8496c0ec524325ac496a71e91bea9d03c7d"
+      PREV_COMMIT: "37be3d02e5b8824b79ebf48dd73aeb5169056d29"
       GH_TOKEN: "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"
 
     steps:
