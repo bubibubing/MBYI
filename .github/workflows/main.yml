@@ -1,0 +1,33 @@
+
+name: Compare Diff Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      new_commit:
+        description: "New commit SHA"
+        required: true
+
+jobs:
+  compare-diff:
+    runs-on: ubuntu-latest
+
+    env:
+      PREV_COMMIT: "4a64ffd0af0c7975c05dd74b9a4bdc247ae01588"
+      GH_TOKEN: "GH_TOKEN"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Fetch changes
+        run: git fetch origin ${{ env.PREV_COMMIT }}:${{ env.PREV_COMMIT }}
+
+      - name: Get commit messages
+        run: |
+          COMMIT_MESSAGES=$(git log --pretty=format:"%s" ${{ env.PREV_COMMIT }}..${{ github.event.inputs.new_commit }})
+          echo "Commit messages between ${{ env.PREV_COMMIT }} and ${{ github.event.inputs.new_commit }}:"
+          echo "$COMMIT_MESSAGES"
+
+      - name: Set new commit as prev_commit
+        run: echo "PREV_COMMIT=${{ github.event.inputs.new_commit }}" >> $GITHUB_ENV
