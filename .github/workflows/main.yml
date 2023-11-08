@@ -20,11 +20,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         
-      - name: Set up Git with GH_TOKEN
-        run: |
-          git config --global user.name "bubibubing"
-          git config --global user.email "nina826120380@gmail.com"
-          echo "//github.com/bubibubing/MBYI.git" | gh auth login --with-token
+      # - name: Set up Git with GH_TOKEN
+      #   run: |
+      #     git config --global user.name "bubibubing"
+      #     git config --global user.email "nina826120380@gmail.com"
+      #     echo "//github.com/bubibubing/MBYI.git" | gh auth login --with-token
 
       - name: Fetch changes
         run: git fetch origin ${{ env.PREV_COMMIT }}:${{ env.PREV_COMMIT }}
