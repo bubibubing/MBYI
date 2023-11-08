@@ -13,12 +13,18 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      PREV_COMMIT: "4a64ffd0af0c7975c05dd74b9a4bdc247ae01588"
-      GH_TOKEN: "GH_TOKEN"
+      PREV_COMMIT: "f077e6f06a5c5074df7793495ef72b92c26474bb"
+      GH_TOKEN: "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"
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        
+      - name: Set up Git with GH_TOKEN
+        run: |
+          git config --global user.name "bubibubing"
+          git config --global user.email "nina826120380@gmail.com"
+          echo "//github.com/bubibubing/MBYI.git" | gh auth login --with-token
 
       - name: Fetch changes
         run: git fetch origin ${{ env.PREV_COMMIT }}:${{ env.PREV_COMMIT }}
